@@ -25,7 +25,7 @@ class CriadorDeSerie
      * @param $serie
      * @param int $epPorTemporada
      */
-    public function criaTemporadas(int $qtdTemporadas, int $epPorTemporada, Serie $serie): void
+    private function criaTemporadas(int $qtdTemporadas, int $epPorTemporada, Serie $serie): void
     {
         for ($i = 1; $i <= $qtdTemporadas; $i++) {
             $temporada = $serie->temporadas()->create(['numero' => $i]);
@@ -38,7 +38,7 @@ class CriadorDeSerie
      * @param int $epPorTemporada
      * @param $temporada
      */
-    public function criaEpisodios(int $epPorTemporada, \Illuminate\Database\Eloquent\Model $temporada): void
+    private function criaEpisodios(int $epPorTemporada, \Illuminate\Database\Eloquent\Model $temporada): void
     {
         for ($j = 1; $j < $epPorTemporada; $j++) {
             $temporada->episodios()->create(['numero' => $j]);
