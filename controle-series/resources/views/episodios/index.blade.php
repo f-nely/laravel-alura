@@ -5,7 +5,7 @@
 @endsection
 
 @section('conteudo')
-    <form action="/temporada/{{ $temporadaId }}/episodios/assistir" method="post">
+    <form action="/temporadas/{{ $temporadaId }}/episodios/assistir" method="post">
         @csrf
         <ul class="list-group">
             @foreach($episodios as $episodio)
