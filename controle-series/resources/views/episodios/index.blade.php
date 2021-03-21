@@ -10,7 +10,7 @@
             @foreach($episodios as $episodio)
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     Episódio {{ $episodio->numero }}
-                    <input type="checkbox">
+                    <input type="checkbox" name="episodios[]">
                 </li>
             @endforeach
         </ul>
