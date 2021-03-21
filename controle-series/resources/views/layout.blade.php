@@ -11,7 +11,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-2">
-        <a class="navbar-brand" href="#">Home</a>
+        <a class="navbar-brand" href="{{ route('listar_series') }}">Home</a>
     </nav>
 
     <div class="container">
