@@ -26,5 +26,7 @@ class EpisodiosController extends Controller
             );
         });
         $temporada->push();
+
+        return redirect()->back();
     }
 }
