@@ -5,7 +5,7 @@
 @endsection
 
 @section('conteudo')
-    <form action="/temporada/{{ $temporadaId }}/episodios/assistir">
+    <form action="/temporada/{{ $temporadaId }}/episodios/assistir" method="post">
         <ul class="list-group">
             @foreach($episodios as $episodio)
                 <li class="list-group-item d-flex justify-content-between align-items-center">
