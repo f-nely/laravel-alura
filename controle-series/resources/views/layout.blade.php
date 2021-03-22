@@ -12,7 +12,9 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-2 d-flex justify-content-between">
         <a class="navbar-brand" href="{{ route('listar_series') }}">Home</a>
+        @auth
         <a href="/sair" class="text-danger">Sair</a>
+        @endauth
     </nav>
 
     <div class="container">
