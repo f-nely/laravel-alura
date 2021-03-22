@@ -15,6 +15,10 @@
         @auth
         <a href="/sair" class="text-danger">Sair</a>
         @endauth
+
+        @guest
+            <a href="/entrar">Entrar</a>
+        @endguest
     </nav>
 
     <div class="container">
