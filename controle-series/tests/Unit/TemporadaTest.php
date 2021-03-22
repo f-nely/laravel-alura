@@ -10,6 +10,9 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class TemporadaTest extends TestCase
 {
+    /** @var Temporada */
+    private $temporada;
+
     public function testBuscaPorEpisodiosAssistidos()
     {
         $temporada = new Temporada();
