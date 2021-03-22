@@ -39,4 +39,10 @@ class TemporadaTest extends TestCase
             $this->assertTrue($episodio->assistido);
         }
     }
+
+    public function testBuscaTodosOsEpisodios()
+    {
+        $episodio = $this->temporada->episodios;
+        $this->assertCount(3, $episodio);
+    }
 }
