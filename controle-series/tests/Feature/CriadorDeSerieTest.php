@@ -4,12 +4,17 @@ namespace Tests\Feature;
 
 use App\Serie;
 use App\Services\CriadorDeSerie;
+use App\Temporada;
 use Tests\TestCase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class CriadorDeSerieTest extends TestCase
 {
+    use RefreshDatabase;
+
     public function testCriarSerie()
     {
+
         $criadorDeSerie = new CriadorDeSerie();
         $nomeSerie = 'Nome de Teste';
         $serieCriada = $criadorDeSerie->criarSerie($nomeSerie, 1, 1);
@@ -19,4 +24,5 @@ class CriadorDeSerieTest extends TestCase
         $this->assertDatabaseHas('temporadas', ['serie_id' => $serieCriada->id, 'numero' => 1]);
         $this->assertDatabaseHas('episodios', ['numero' => 1]);
     }
+
 }
