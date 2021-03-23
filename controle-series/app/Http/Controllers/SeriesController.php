@@ -30,7 +30,7 @@ class SeriesController extends Controller
     public function store(SeriesFormRequest $request, CriadorDeSerie $criadorDeSerie)
     {
         $serie = $criadorDeSerie->criarSerie($request->nome, $request->qtd_temporadas, $request->ep_por_temporada);
-        
+
         $users = User::all();
         foreach ($users as $user) {
             $email = new \App\Mail\NovaSerie(
@@ -40,6 +40,7 @@ class SeriesController extends Controller
             );
             $email->subject = 'Nova Série Adicionada';
             Mail::to($user)->send($email);
+            sleep(5);
         }
         //dd($user);
 
