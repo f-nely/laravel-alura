@@ -12,18 +12,11 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 class NovaSerie extends Mailable
 {
     use Queueable, SerializesModels;
-
-    /**
-     * @var string
-     */
+    
     public $nome;
-    /**
-     * @var Temporada
-     */
+
     public $qtdTemporada;
-    /**
-     * @var Episodio
-     */
+
     public $qtdEpisodios;
 
     /**
@@ -31,7 +24,7 @@ class NovaSerie extends Mailable
      *
      * @return void
      */
-    public function __construct(string $nome, Temporada $qtdTemporada, Episodio $qtdEpisodios)
+    public function __construct($nome, $qtdTemporada, $qtdEpisodios)
     {
         //
         $this->nome = $nome;
