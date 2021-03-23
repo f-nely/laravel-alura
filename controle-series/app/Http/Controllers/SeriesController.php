@@ -7,6 +7,7 @@ use App\Http\Requests\SeriesFormRequest;
 use App\Serie;
 use App\Services\CriadorDeSerie;
 use App\Services\RemovedorDeSerie;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -29,17 +30,18 @@ class SeriesController extends Controller
     public function store(SeriesFormRequest $request, CriadorDeSerie $criadorDeSerie)
     {
         $serie = $criadorDeSerie->criarSerie($request->nome, $request->qtd_temporadas, $request->ep_por_temporada);
-
-        $email = new \App\Mail\NovaSerie(
-            $request->nome,
-            $request->qtd_temporadas,
-            $request->ep_por_temporada
-        );
-        $email->subject = 'Nova Série Adicionada';
-        $user = $request->user();
+        
+        $users = User::all();
+        foreach ($users as $user) {
+            $email = new \App\Mail\NovaSerie(
+                $request->nome,
+                $request->qtd_temporadas,
+                $request->ep_por_temporada
+            );
+            $email->subject = 'Nova Série Adicionada';
+            Mail::to($user)->send($email);
+        }
         //dd($user);
-
-        Mail::to($user)->send($email);
 
         $request->session()->flash(
             'mensagem',
