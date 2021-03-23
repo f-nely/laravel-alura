@@ -47,5 +47,7 @@ Route::get('/sair', function () {
 });
 
 Route::get('/visualizando-email', function () {
-    return new \App\Mail\NovaSerie();
+    return new \App\Mail\NovaSerie(
+        'Arrow'
+    );
 });
