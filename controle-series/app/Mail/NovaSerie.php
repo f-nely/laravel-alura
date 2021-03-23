@@ -12,10 +12,10 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 class NovaSerie extends Mailable
 {
     use Queueable, SerializesModels;
-    
+
     public $nome;
 
-    public $qtdTemporada;
+    public $qtdTemporadas;
 
     public $qtdEpisodios;
 
@@ -24,11 +24,11 @@ class NovaSerie extends Mailable
      *
      * @return void
      */
-    public function __construct($nome, $qtdTemporada, $qtdEpisodios)
+    public function __construct($nome, $qtdTemporadas, $qtdEpisodios)
     {
         //
         $this->nome = $nome;
-        $this->qtdTemporada = $qtdTemporada;
+        $this->qtdTemporadas = $qtdTemporadas;
         $this->qtdEpisodios = $qtdEpisodios;
     }
 
