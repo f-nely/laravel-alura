@@ -48,6 +48,8 @@ Route::get('/sair', function () {
 
 Route::get('/visualizando-email', function () {
     return new \App\Mail\NovaSerie(
-        'Arrow'
+        'Arrow',
+        5,
+        10
     );
 });
