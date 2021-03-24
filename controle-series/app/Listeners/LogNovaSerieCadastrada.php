@@ -26,6 +26,7 @@ class LogNovaSerieCadastrada
      */
     public function handle(NovaSerie $event)
     {
-        //
+        $nomeSerie = $event->nomeSerie;
+        \Log::info('Série nova cadastrada ' . $nomeSerie);
     }
 }
