@@ -39,8 +39,7 @@ class SeriesController extends Controller
                 $request->ep_por_temporada
             );
             $email->subject = 'Nova Série Adicionada';
-            Mail::to($user)->send($email);
-            sleep(5);
+            Mail::to($user)->queue($email);
         }
         //dd($user);
 
