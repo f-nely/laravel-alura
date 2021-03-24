@@ -43,23 +43,6 @@ class SeriesController extends Controller
         );
         event($eventoNovaSerie);
 
-        $users = User::all();
-        foreach ($users as $index => $user) {
-            $multiplicador = $index + 1;
-            $email = new \App\Mail\NovaSerie(
-                $request->nome,
-                $request->qtd_temporadas,
-                $request->ep_por_temporada
-            );
-            $email->subject = 'Nova Série Adicionada';
-            $when = now()->addSecond($multiplicador * 5);
-            Mail::to($user)->later(
-                $when,
-                $email
-            );
-        }
-        //dd($user);
-
         $request->session()->flash(
             'mensagem',
             "Série {$serie->id} e suas temporadas e episódios criados com sucesso {$serie->nome}"
