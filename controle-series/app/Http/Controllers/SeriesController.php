@@ -3,6 +3,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\NovaSerie;
 use App\Http\Requests\SeriesFormRequest;
 use App\Serie;
 use App\Services\CriadorDeSerie;
@@ -29,7 +30,18 @@ class SeriesController extends Controller
 
     public function store(SeriesFormRequest $request, CriadorDeSerie $criadorDeSerie)
     {
-        $serie = $criadorDeSerie->criarSerie($request->nome, $request->qtd_temporadas, $request->ep_por_temporada);
+        $serie = $criadorDeSerie->criarSerie(
+            $request->nome,
+            $request->qtd_temporadas,
+            $request->ep_por_temporada
+        );
+
+        $eventoNovaSerie = new NovaSerie(
+            $request->nome,
+            $request->qtd_temporadas,
+            $request->ep_por_temporada
+        );
+        event($eventoNovaSerie);
 
         $users = User::all();
         foreach ($users as $index => $user) {
