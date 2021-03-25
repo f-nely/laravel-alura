@@ -14,7 +14,7 @@ class AdicionaCampoCapaNaSerie extends Migration
     public function up()
     {
         Schema::table('series', function (Blueprint $table) {
-            //
+            $table->string('capa')->nullable();
         });
     }
 
@@ -26,7 +26,7 @@ class AdicionaCampoCapaNaSerie extends Migration
     public function down()
     {
         Schema::table('series', function (Blueprint $table) {
-            //
+            $table->dropColumn('capa');
         });
     }
 }
