@@ -5,6 +5,7 @@ namespace App;
 
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Serie extends Model
 {
@@ -14,10 +15,10 @@ class Serie extends Model
     public function getCapaUrlAttribute()
     {
         if ($this->capa) {
-            return 'http://localhost:8000/storage/' . $this->capa;
+            return Storage::url($this->capa);
         }
 
-        return 'http://localhost:8000/storage/serie/sem-imagem.jpg';
+        return Storage::url('serie/sem-imagem.jpg');
 
     }
 
