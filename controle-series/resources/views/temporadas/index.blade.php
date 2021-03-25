@@ -8,7 +8,9 @@
 
     <div class="row mb-4">
         <div class="col-md-12 text-center">
-            <img src="{{$serie->capa_url}}" class="img-thumbnail" height="400px" width="400px">
+            <a href="{{$serie->capa_url}}" target="_blank">
+                <img src="{{$serie->capa_url}}" class="img-thumbnail" height="400px" width="400px">
+            </a>
         </div>
     </div>
 
