@@ -7,7 +7,7 @@
 @section('conteudo')
     @include('erros', ['errors' => $errors])
 
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">
             <div class="col col-8">
