@@ -26,6 +26,13 @@
             </div>
         </div>
 
+        <div class="row">
+            <div class="col col-12">
+                <label for="capa">Capa</label>
+                <input type="text" class="form-control" name="capa" id="capa">
+            </div>
+        </div>
+
         <button class="btn btn-primary mt-2">Adicionar</button>
     </form>
 @endsection
