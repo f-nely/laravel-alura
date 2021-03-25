@@ -29,7 +29,7 @@
         <div class="row">
             <div class="col col-12">
                 <label for="capa">Capa</label>
-                <input type="text" class="form-control" name="capa" id="capa">
+                <input type="file" class="form-control" name="capa" id="capa">
             </div>
         </div>
 
