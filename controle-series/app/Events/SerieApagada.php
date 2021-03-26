@@ -17,7 +17,7 @@ class SerieApagada
     /**
      * @var Serie
      */
-    private $serie;
+    public $serie;
 
     /**
      * Create a new event instance.
