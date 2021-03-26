@@ -20,10 +20,7 @@ class RemovedorDeSerie
             $serie->delete();
 
             $evento = new SerieApagada($serie);
-            
-            if ($serie->capa) {
-                Storage::delete($serie->capa);
-            }
+            event($evento);
         });
 
         return $nomeSerie;
