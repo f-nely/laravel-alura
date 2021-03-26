@@ -7,7 +7,6 @@ use App\Events\SerieApagada;
 use App\Listeners\EnviarEmailNovaSerieCadastrada;
 use App\Listeners\ExcluirCapaSerie;
 use App\Listeners\LogNovaSerieCadastrada;
-use Illuminate\Support\Facades\Event;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
