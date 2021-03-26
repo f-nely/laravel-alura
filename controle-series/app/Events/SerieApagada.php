@@ -15,13 +15,18 @@ class SerieApagada
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     /**
+     * @var Serie
+     */
+    private $serie;
+
+    /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Serie $serie)
     {
-        //
+        $this->serie = $serie;
     }
 
     /**
